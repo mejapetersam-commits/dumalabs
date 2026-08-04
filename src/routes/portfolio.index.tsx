@@ -6,7 +6,7 @@ import { PageHero, Panel, Section } from "@/components/site/primitives";
 import { projects } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/portfolio")({
+export const Route = createFileRoute("/portfolio/")({
   head: () => ({
     meta: [
       { title: "Work — Case studies from Duma Labs" },
