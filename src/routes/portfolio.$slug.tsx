@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
 import { CTALink, Panel, Section, Eyebrow } from "@/components/site/primitives";
-import { projects } from "@/lib/site-data";
+import { projects, type Project } from "@/lib/site-data";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
 });
 
 function CaseStudy() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
 
   return (
     <>
