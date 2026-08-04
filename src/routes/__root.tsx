@@ -84,12 +84,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Duma Labs designs and builds websites, mobile apps, AI tools and automation for ambitious African organisations.",
+          "We design, develop and scale websites, mobile apps, AI tools and business systems for ambitious African organisations.",
       },
       { name: "author", content: "Duma Labs" },
       { property: "og:site_name", content: "Duma Labs" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Duma Labs — African Digital Product Studio" },
+      { name: "twitter:title", content: "Duma Labs — African Digital Product Studio" },
+      { property: "og:description", content: "We design, develop and scale websites, mobile apps, AI tools and business systems for ambitious African organisations." },
+      { name: "twitter:description", content: "We design, develop and scale websites, mobile apps, AI tools and business systems for ambitious African organisations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/584ddad8-95d0-437a-85bb-e23f72845686/id-preview-f3157a6b--0698c1b1-19ac-4745-9eeb-dc5cb6684dbb.lovable.app-1785806018882.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/584ddad8-95d0-437a-85bb-e23f72845686/id-preview-f3157a6b--0698c1b1-19ac-4745-9eeb-dc5cb6684dbb.lovable.app-1785806018882.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

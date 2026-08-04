@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Websites, mobile apps, AI tools and automation systems built for teams across Africa.",
+          "We design, develop and scale websites, mobile apps, AI tools and business systems for ambitious African organisations.",
       },
       { property: "og:url", content: "/" },
     ],
