@@ -27,7 +27,14 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const trusted = ["MoreLifeOS", "Between the Climbs", "Kazi Retail", "Tumaini Health", "Shamba Data"];
+const trusted = [
+  "MoreLifeOS",
+  "Between the Climbs",
+  "Young Tots Edventures",
+  "The Big Voice Limited",
+  "Stanna Orchards",
+  "Kidsnook",
+];
 
 function Home() {
   return (
@@ -40,7 +47,7 @@ function Home() {
           width={1600}
           height={1200}
           aria-hidden="true"
-          className="pointer-events-none absolute -right-40 top-0 h-full w-[70%] object-cover opacity-30 mix-blend-screen dark:opacity-40"
+          className="pointer-events-none absolute -right-40 top-0 h-full w-[70%] object-cover opacity-20 mix-blend-normal dark:opacity-40 dark:mix-blend-screen"
         />
         <div className="glow-orb -left-32 top-24 size-[30rem] animate-float-slow" aria-hidden="true" />
 
