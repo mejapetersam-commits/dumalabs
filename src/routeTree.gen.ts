@@ -11,10 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TechnologyRouteImport } from './routes/technology'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
@@ -29,9 +34,29 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcessRoute = ProcessRouteImport.update({
@@ -47,6 +72,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const TechnologyRoute = TechnologyRouteImport.update({
   id: '/technology',
   path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WhyUsRoute = WhyUsRouteImport.update({
@@ -68,10 +98,15 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -79,10 +114,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio': typeof PortfolioIndexRoute
@@ -91,10 +131,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
   '/industries': typeof IndustriesRoute
+  '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRoute
   '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
   '/why-us': typeof WhyUsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -104,10 +149,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
     | '/industries'
+    | '/privacy'
     | '/process'
     | '/services'
     | '/technology'
+    | '/terms'
     | '/why-us'
     | '/portfolio/$slug'
     | '/portfolio/'
@@ -115,10 +165,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
     | '/industries'
+    | '/privacy'
     | '/process'
     | '/services'
     | '/technology'
+    | '/terms'
     | '/why-us'
     | '/portfolio/$slug'
     | '/portfolio'
@@ -126,10 +181,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
     | '/industries'
+    | '/privacy'
     | '/process'
     | '/services'
     | '/technology'
+    | '/terms'
     | '/why-us'
     | '/portfolio/$slug'
     | '/portfolio/'
@@ -138,10 +198,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRoute
+  CareersRoute: typeof CareersRoute
+  ContactRoute: typeof ContactRoute
   IndustriesRoute: typeof IndustriesRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRoute
   TechnologyRoute: typeof TechnologyRoute
+  TermsRoute: typeof TermsRoute
   WhyUsRoute: typeof WhyUsRoute
   PortfolioSlugRoute: typeof PortfolioSlugRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
@@ -163,11 +228,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
       fullPath: '/industries'
       preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/process': {
@@ -189,6 +282,13 @@ declare module '@tanstack/react-router' {
       path: '/technology'
       fullPath: '/technology'
       preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/why-us': {
@@ -218,10 +318,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BlogRoute: BlogRoute,
+  CareersRoute: CareersRoute,
+  ContactRoute: ContactRoute,
   IndustriesRoute: IndustriesRoute,
+  PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRoute,
   TechnologyRoute: TechnologyRoute,
+  TermsRoute: TermsRoute,
   WhyUsRoute: WhyUsRoute,
   PortfolioSlugRoute: PortfolioSlugRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
@@ -229,3 +334,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
