@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { site } from "@/lib/site-data";
-import navIconLight from "@/assets/brand/nav-icon-light.png";
-import navIconDark from "@/assets/brand/nav-icon-dark.png";
+import lockupLight from "@/assets/brand/lockup-light.png";
+import lockupDark from "@/assets/brand/lockup-dark.png";
 
 const columns = [
   {
@@ -39,23 +39,8 @@ export function SiteFooter() {
       <div className="container-page py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <img
-                src={navIconLight}
-                alt=""
-                width={32}
-                height={32}
-                className="size-8 rounded-xl dark:hidden"
-              />
-              <img
-                src={navIconDark}
-                alt=""
-                width={32}
-                height={32}
-                className="hidden size-8 rounded-xl dark:block"
-              />
-              <span className="font-display text-base font-semibold">Duma Labs</span>
-            </div>
+            <img src={lockupLight} alt="Duma Labs" className="h-auto w-56 dark:hidden" />
+            <img src={lockupDark} alt="Duma Labs" className="hidden h-auto w-56 dark:block" />
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{site.tagline}</p>
             <p className="mt-4 text-sm text-muted-foreground">{site.location}</p>
             <div className="mt-5 flex flex-wrap gap-4 text-sm">
