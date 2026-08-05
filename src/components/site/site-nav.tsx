@@ -5,6 +5,8 @@ import { nav } from "@/lib/site-data";
 import { ThemeToggle } from "./theme-toggle";
 import { ctaStyles } from "./primitives";
 import { cn } from "@/lib/utils";
+import navIconLight from "@/assets/brand/nav-icon-light.png";
+import navIconDark from "@/assets/brand/nav-icon-dark.png";
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -27,9 +29,20 @@ export function SiteNav() {
       >
         <div className="container-page flex h-18 items-center gap-4 py-4">
           <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Duma Labs home">
-            <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-primary font-display text-sm font-bold text-primary-foreground">
-              D
-            </span>
+            <img
+              src={navIconLight}
+              alt=""
+              width={32}
+              height={32}
+              className="size-8 shrink-0 rounded-xl dark:hidden"
+            />
+            <img
+              src={navIconDark}
+              alt=""
+              width={32}
+              height={32}
+              className="hidden size-8 shrink-0 rounded-xl dark:block"
+            />
             <span className="truncate font-display text-base font-semibold tracking-tight">
               Duma Labs
             </span>
