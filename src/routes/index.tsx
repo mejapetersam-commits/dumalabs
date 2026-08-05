@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroMesh from "@/assets/hero-mesh.jpg";
 import { Reveal } from "@/components/site/reveal";
-import { CTALink, Section, Eyebrow } from "@/components/site/primitives";
+import { CTALink, Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,12 +61,6 @@ function Home() {
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:text-xl">
-              We design, develop and scale websites, mobile apps, AI tools and business systems that
-              help ambitious organisations grow.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
             <div className="mt-10 flex flex-wrap gap-3">
               <CTALink to="/contact">
                 Start a Project
@@ -97,30 +91,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <Section className="border-t border-border">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-4xl border border-border bg-card px-7 py-16 text-center lg:px-16">
-            <div className="glow-orb left-1/2 top-full size-[28rem] -translate-x-1/2" aria-hidden="true" />
-            <h2 className="relative mx-auto max-w-2xl text-3xl font-semibold leading-[1.08] sm:text-4xl lg:text-5xl">
-              Tell us what you're building.
-            </h2>
-            <p className="relative mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              A 30-minute discovery call, an honest read on scope, and a plan you can act on whether
-              or not you work with us.
-            </p>
-            <div className="relative mt-9 flex flex-wrap justify-center gap-3">
-              <CTALink to="/contact">
-                Start a Project
-                <ArrowRight className="size-4" />
-              </CTALink>
-              <CTALink to="/services" variant="ghost">
-                Explore services
-              </CTALink>
-            </div>
-          </div>
-        </Reveal>
-      </Section>
     </>
   );
 }
