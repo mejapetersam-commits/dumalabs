@@ -1,9 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import heroMesh from "@/assets/hero-mesh.jpg";
 import { Reveal } from "@/components/site/reveal";
-import { CTALink, Panel, Section, SectionHead, Eyebrow } from "@/components/site/primitives";
-import { services, projects, processSteps, testimonials, techStack } from "@/lib/site-data";
+import { CTALink, Section, SectionHead, Eyebrow } from "@/components/site/primitives";
+import { techStack } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,120 +113,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <Section>
-        <Reveal>
-          <SectionHead
-            eyebrow="Services"
-            title="Eight disciplines, one delivery team."
-            body="Strategy, design and engineering under one roof — so nothing gets lost in a handover between agencies."
-          />
-        </Reveal>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, i) => (
-            <Reveal key={service.slug} delay={i * 50}>
-              <Link to="/services" className="block h-full">
-                <Panel className="h-full p-6">
-                  <h3 className="font-display text-base font-semibold">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {service.summary}
-                  </p>
-                </Panel>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="border-t border-border bg-surface">
-        <Reveal>
-          <SectionHead
-            eyebrow="Selected work"
-            title="Real projects, real decisions, measurable outcomes."
-            body="No filler case studies. These are products we designed, built and still maintain."
-          />
-        </Reveal>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 80}>
-              <Link
-                to="/portfolio/$slug"
-                params={{ slug: project.slug }}
-                className="block h-full"
-              >
-                <Panel className="flex h-full flex-col">
-                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
-                  </div>
-                  <h3 className="mt-6 font-display text-2xl font-semibold">{project.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {project.blurb}
-                  </p>
-                  <div className="mt-6 border-t border-border pt-5">
-                    <p className="font-display text-lg font-semibold text-primary">
-                      {project.metrics[0]?.value}
-                    </p>
-                    <p className="text-xs text-muted-foreground">{project.metrics[0]?.label}</p>
-                  </div>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
-                    Read the case study
-                    <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </Panel>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <Reveal>
-          <SectionHead eyebrow="Testimonials" title="What working with us feels like." />
-        </Reveal>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.quote} delay={i * 80}>
-              <Panel className="h-full">
-                <p className="text-base leading-relaxed">"{t.quote}"</p>
-                <footer className="mt-6 text-sm text-muted-foreground">
-                  {t.name} · {t.org}
-                </footer>
-              </Panel>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="border-t border-border bg-surface">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <Reveal>
-            <SectionHead
-              eyebrow="Our process"
-              title="Seven steps from a first conversation to a supported product."
-              body="Every engagement follows the same spine, sized to the project."
-            />
-            <div className="mt-8">
-              <CTALink to="/process" variant="ghost">
-                See the full process
-              </CTALink>
-            </div>
-          </Reveal>
-          <div className="grid gap-3">
-            {processSteps.map((step, i) => (
-              <Reveal key={step.step} delay={i * 40}>
-                <div className="flex gap-5 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40">
-                  <span className="font-display text-sm font-semibold text-primary">{step.step}</span>
-                  <div className="min-w-0">
-                    <h3 className="font-display text-base font-semibold">{step.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{step.body}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </Section>
 
       <Section>
         <Reveal>

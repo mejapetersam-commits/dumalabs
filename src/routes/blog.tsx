@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/reveal";
-import { PageHero, Panel, Section } from "@/components/site/primitives";
-import { posts } from "@/lib/site-data";
+import { PageHero, Panel, Section, SectionHead } from "@/components/site/primitives";
+import { posts, testimonials } from "@/lib/site-data";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -50,6 +50,24 @@ function Blog() {
                 <h2 className="mt-5 font-display text-2xl font-semibold">{post.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
                 <p className="mt-6 text-xs text-muted-foreground">Full piece publishing soon.</p>
+              </Panel>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="border-t border-border bg-surface">
+        <Reveal>
+          <SectionHead eyebrow="Testimonials" title="What working with us feels like." />
+        </Reveal>
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <Reveal key={t.quote} delay={i * 80}>
+              <Panel className="h-full">
+                <p className="text-base leading-relaxed">"{t.quote}"</p>
+                <footer className="mt-6 text-sm text-muted-foreground">
+                  {t.name} · {t.org}
+                </footer>
               </Panel>
             </Reveal>
           ))}
