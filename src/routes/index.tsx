@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroMesh from "@/assets/hero-mesh.jpg";
 import { Reveal } from "@/components/site/reveal";
-import { CTALink, Section, SectionHead, Eyebrow } from "@/components/site/primitives";
-import { techStack } from "@/lib/site-data";
+import { CTALink, Section, Eyebrow } from "@/components/site/primitives";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,21 +77,6 @@ function Home() {
               </CTALink>
             </div>
           </Reveal>
-
-          <Reveal delay={320}>
-            <dl className="mt-20 grid max-w-3xl gap-8 border-t border-border pt-10 sm:grid-cols-3">
-              {[
-                { k: "Products shipped end to end", v: "3 in-house" },
-                { k: "Typical web build window", v: "2 — 4 weeks" },
-                { k: "Accounts owned by the client", v: "100%" },
-              ].map((s) => (
-                <div key={s.k}>
-                  <dt className="text-sm text-muted-foreground">{s.k}</dt>
-                  <dd className="mt-1 font-display text-2xl font-semibold">{s.v}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
         </div>
       </section>
 
@@ -113,21 +97,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <Section>
-        <Reveal>
-          <SectionHead eyebrow="Technology" title="A stack chosen for speed and longevity." />
-        </Reveal>
-        <div className="mt-10 flex flex-wrap gap-2.5">
-          {techStack.map((tech, i) => (
-            <Reveal key={tech} delay={i * 25}>
-              <span className="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground/85 transition-colors hover:border-primary/50 hover:text-primary">
-                {tech}
-              </span>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
 
       <Section className="border-t border-border">
         <Reveal>

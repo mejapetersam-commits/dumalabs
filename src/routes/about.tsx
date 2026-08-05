@@ -38,6 +38,23 @@ function About() {
         </CTALink>
       </PageHero>
 
+      <Section className="border-b border-border">
+        <dl className="grid gap-8 sm:grid-cols-3">
+          {[
+            { k: "Products shipped end to end", v: "3 in-house" },
+            { k: "Typical web build window", v: "2 — 4 weeks" },
+            { k: "Accounts owned by the client", v: "100%" },
+          ].map((s, i) => (
+            <Reveal key={s.k} delay={i * 80}>
+              <div>
+                <dt className="text-sm text-muted-foreground">{s.k}</dt>
+                <dd className="mt-1 font-display text-2xl font-semibold">{s.v}</dd>
+              </div>
+            </Reveal>
+          ))}
+        </dl>
+      </Section>
+
       <Section>
         <div className="grid gap-10 lg:grid-cols-3">
           {[
