@@ -1,5 +1,3 @@
-import kidsNookLogo from "@/assets/clients/kidsnook-logo.png";
-
 export const site = {
   name: "Duma Labs",
   tagline: "Building Digital Products That Move Africa Forward.",
@@ -234,7 +232,7 @@ export const projects: Project[] = [
     ],
     real: true,
     url: "https://kidsnook.ke",
-    image: kidsNookLogo,
+    image: "https://kidsnook.ke/assets/mother-child-OSVdrGxf.png",
   },
   {
     slug: "stanna-orchards",
