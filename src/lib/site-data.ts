@@ -191,33 +191,109 @@ export const projects: Project[] = [
     real: true,
   },
   {
-    slug: "client-web-builds",
-    name: "Client Web Builds",
+    slug: "young-tots-edventures",
+    name: "Young Tots Edventures",
     category: "Web",
-    year: "2024 — 2026",
+    year: "2026",
     blurb:
-      "A running body of business sites and landing pages built for small teams across East Africa.",
-    role: "Design, build, handover and support",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Vercel"],
+      "A registration-driven site for a Nairobi children's holiday programme, built to turn interest into booked, paid seats.",
+    role: "Design, build, registration flow",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
     problem:
-      "Small teams inherit sites they cannot edit, hosted somewhere nobody remembers, loading in five seconds on mobile.",
+      "A seasonal holiday programme with a fixed number of slots was relying on word of mouth and DMs to fill seats, with no way to see availability or register before a session sold out.",
     approach: [
-      "Standardised a component kit so each build starts at 60% complete and stays consistent.",
-      "Made every page editable by a non-technical owner before handover.",
-      "Set a performance and accessibility budget that has to pass before launch.",
-      "Left each client with hosting, analytics and a written runbook in their own accounts.",
+      "Built a single-page site around the current programme (Summer Safari) instead of a generic brochure.",
+      "Put registration one click from the hero, with slot availability visible up front.",
+      "Wrote metadata and share previews so the programme looks credible the moment a parent shares the link.",
+      "Kept the page light enough to load instantly over mobile data, where most bookings happen.",
     ],
     outcome:
-      "Builds now ship in a fraction of the original timeline, and clients update their own content without coming back for a developer.",
+      "Parents can see what the programme is, when it runs and register in one sitting, without a back-and-forth over WhatsApp to confirm a spot.",
     metrics: [
-      { label: "Typical build window", value: "2 — 4 weeks" },
-      { label: "Client-editable pages", value: "100%" },
-      { label: "Accounts owned by client", value: "All" },
+      { label: "Registration steps", value: "1" },
+      { label: "Programme length", value: "5 days" },
+      { label: "Launched for", value: "2026 season" },
     ],
     screens: [
-      { title: "Component kit", note: "Shared primitives keep every build fast and coherent." },
-      { title: "Handover runbook", note: "Hosting, domains and analytics documented in plain language." },
+      { title: "Programme page", note: "The current season's programme, dates and what's included, above the fold." },
+      { title: "Registration", note: "One form, no account required, to hold a child's slot." },
     ],
+    real: true,
+  },
+  {
+    slug: "kids-nook",
+    name: "Kids' Nook",
+    category: "Web",
+    year: "2025 — 2026",
+    blurb:
+      "A children's salon and activity centre in Nairobi — booking, loyalty and admin tooling, built and still run end to end.",
+    role: "Design, full-stack build, admin tooling, ongoing support",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare Workers"],
+    problem:
+      "A salon-meets-play-centre business with five different activities (hair, gaming, library, outdoor, crafts) had no way to book online, track loyalty visits, or manage bookings without a staff member on the phone.",
+    approach: [
+      "Built a five-section enrollment and booking flow covering child info, guardians, emergency contacts and consent.",
+      "Wired a loyalty program that emails parents automatically as visits accumulate toward a free sixth visit.",
+      "Shipped a password-protected admin dashboard for staff to manage bookings without touching code.",
+      "Set up dedicated business email (Zoho) and automated transactional email (Resend) on the client's own domain.",
+    ],
+    outcome:
+      "Booking, loyalty tracking and family communication now run without manual staff intervention, on infrastructure the client owns outright.",
+    metrics: [
+      { label: "Families served", value: "5,000+" },
+      { label: "Loyalty reward", value: "6th visit free" },
+      { label: "Open days", value: "6 / week" },
+    ],
+    screens: [
+      { title: "Booking flow", note: "A five-section enrollment form wired to live availability." },
+      { title: "Loyalty & admin", note: "Automatic visit-count emails and a staff dashboard for day-to-day ops." },
+    ],
+    real: true,
+  },
+  {
+    slug: "stanna-orchards",
+    name: "Stanna Orchards",
+    category: "Web",
+    year: "2026",
+    blurb: "A farm and orchard business's first digital home — produce, visits and story, in one clean site.",
+    role: "Design, build",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    problem:
+      "The business had no presence beyond word of mouth, so new customers had no way to find what was in season, how to visit, or how to get in touch.",
+    approach: [
+      "Structured the site around what a first-time visitor actually needs: what's grown, how to visit, how to reach the farm.",
+      "Kept the build lean and fast to launch, with room to add a shop or booking flow later without a rebuild.",
+    ],
+    outcome: "The farm now has a shareable, searchable front door that didn't exist before.",
+    metrics: [
+      { label: "Prior web presence", value: "None" },
+      { label: "Build window", value: "2 — 4 weeks" },
+    ],
+    screens: [{ title: "Home", note: "Produce, visiting info and contact, structured for a first-time visitor." }],
+    real: true,
+  },
+  {
+    slug: "the-big-voice",
+    name: "The Big Voice Limited",
+    category: "Web",
+    year: "2025",
+    blurb:
+      "The brand site for a Nairobi audio production studio — voice, event sound and podcasts for brands including LG, Cellulant and StarTimes.",
+    role: "Design, build, Cloudflare migration",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Cloudflare Workers"],
+    problem:
+      "A studio whose own clients are recognisable brands needed a site that read as premium as the work it does for them, without the overhead of a backend it didn't need.",
+    approach: [
+      "Built fully static — no forms, no database — so there's nothing to break and nothing to maintain.",
+      "Structured the site around the three service pillars (voice & audio, event sound, podcasts) instead of a generic services list.",
+      "Migrated hosting to Cloudflare for speed, fixing routing and asset config along the way.",
+    ],
+    outcome: "A fast, fully static site that showcases enterprise clients credibly and costs nothing to keep running.",
+    metrics: [
+      { label: "Backend complexity", value: "Zero — static" },
+      { label: "Enterprise clients shown", value: "LG, Cellulant, StarTimes +2" },
+    ],
+    screens: [{ title: "Home", note: "Service pillars and client logos, structured around what the studio actually sells." }],
     real: true,
   },
 ];

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/portfolio/")({
       {
         name: "description",
         content:
-          "Case studies from Duma Labs: MoreLifeOS, Between the Climbs and client web builds, with the problems, process and outcomes.",
+          "Case studies from Duma Labs: MoreLifeOS, Between the Climbs, and client builds for Kids' Nook, Young Tots Edventures, Stanna Orchards and The Big Voice Limited.",
       },
       { property: "og:title", content: "Work — Case studies from Duma Labs" },
       {
