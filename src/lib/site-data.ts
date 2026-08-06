@@ -232,7 +232,6 @@ export const projects: Project[] = [
     ],
     real: true,
     url: "https://kidsnook.ke",
-    image: "https://kidsnook.ke/assets/mother-child-OSVdrGxf.png",
   },
   {
     slug: "stanna-orchards",
