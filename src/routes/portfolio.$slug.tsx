@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
-import { CTALink, Panel, Section, Eyebrow } from "@/components/site/primitives";
+import { CTALink, Panel, Section, Eyebrow, ctaStyles } from "@/components/site/primitives";
 import { projects, type Project } from "@/lib/site-data";
 
 export const Route = createFileRoute("/portfolio/$slug")({
@@ -74,6 +74,19 @@ function CaseStudy() {
           <p className="mt-6 text-sm text-muted-foreground">
             <span className="text-foreground">Our role:</span> {project.role}
           </p>
+          {project.url ? (
+            <div className="mt-8">
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className={ctaStyles.primary}>
+                Visit live site
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
+          ) : null}
+          {project.image ? (
+            <div className="mt-12 aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border">
+              <img src={project.image} alt="" loading="eager" className="h-full w-full object-cover" />
+            </div>
+          ) : null}
         </div>
       </header>
 
@@ -119,10 +132,16 @@ function CaseStudy() {
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 {project.screens.map((s) => (
                   <Panel key={s.title} className="p-6" interactive={false}>
-                    <div
-                      className="aspect-video rounded-xl border border-border bg-surface hairline-grid"
-                      aria-hidden="true"
-                    />
+                    {s.image ? (
+                      <div className="aspect-video overflow-hidden rounded-xl border border-border">
+                        <img src={s.image} alt="" loading="lazy" className="h-full w-full object-cover" />
+                      </div>
+                    ) : (
+                      <div
+                        className="aspect-video rounded-xl border border-border bg-surface hairline-grid"
+                        aria-hidden="true"
+                      />
+                    )}
                     <h3 className="mt-5 font-display text-base font-semibold">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.note}</p>
                   </Panel>

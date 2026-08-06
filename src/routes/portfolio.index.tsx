@@ -64,30 +64,57 @@ function Portfolio() {
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {visible.map((project, i) => (
             <Reveal key={project.slug} delay={i * 70}>
-              <Link to="/portfolio/$slug" params={{ slug: project.slug }} className="block h-full">
-                <Panel className="flex h-full flex-col p-8">
-                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
+              <Panel className="flex h-full flex-col p-8" interactive={false}>
+                {project.image ? (
+                  <div className="-mx-8 -mt-8 mb-2 aspect-video overflow-hidden rounded-t-3xl">
+                    <img
+                      src={project.image}
+                      alt=""
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  <h2 className="mt-6 font-display text-3xl font-semibold">{project.name}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {project.blurb}
-                  </p>
-                  <dl className="mt-7 grid gap-4 border-t border-border pt-6 sm:grid-cols-3">
-                    {project.metrics.map((m) => (
-                      <div key={m.label}>
-                        <dd className="font-display text-lg font-semibold text-primary">{m.value}</dd>
-                        <dt className="mt-0.5 text-xs text-muted-foreground">{m.label}</dt>
-                      </div>
-                    ))}
-                  </dl>
-                  <span className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium">
+                ) : null}
+                <div className="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                  <span>{project.category}</span>
+                  <span>{project.year}</span>
+                </div>
+                <Link to="/portfolio/$slug" params={{ slug: project.slug }}>
+                  <h2 className="mt-6 font-display text-3xl font-semibold hover:text-primary">
+                    {project.name}
+                  </h2>
+                </Link>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
+                <dl className="mt-7 grid gap-4 border-t border-border pt-6 sm:grid-cols-3">
+                  {project.metrics.map((m) => (
+                    <div key={m.label}>
+                      <dd className="font-display text-lg font-semibold text-primary">{m.value}</dd>
+                      <dt className="mt-0.5 text-xs text-muted-foreground">{m.label}</dt>
+                    </div>
+                  ))}
+                </dl>
+                <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  <Link
+                    to="/portfolio/$slug"
+                    params={{ slug: project.slug }}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium hover:text-primary"
+                  >
                     Read the case study
                     <ArrowUpRight className="size-4" />
-                  </span>
-                </Panel>
-              </Link>
+                  </Link>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
+                    >
+                      Visit live site
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                  ) : null}
+                </div>
+              </Panel>
             </Reveal>
           ))}
         </div>

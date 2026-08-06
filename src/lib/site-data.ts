@@ -125,8 +125,10 @@ export type Project = {
   approach: string[];
   outcome: string;
   metrics: { label: string; value: string }[];
-  screens: { title: string; note: string }[];
+  screens: { title: string; note: string; image?: string }[];
   real: boolean;
+  url?: string;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -159,6 +161,7 @@ export const projects: Project[] = [
       { title: "Streak + review", note: "Weekly reflection surfaces patterns instead of raw numbers." },
     ],
     real: true,
+    url: "https://morelifeos.vercel.app",
   },
   {
     slug: "between-the-climbs",
@@ -180,7 +183,7 @@ export const projects: Project[] = [
     outcome:
       "Readers move deeper into the archive instead of bouncing after one piece, and publishing a new essay is now a single-step action.",
     metrics: [
-      { label: "Largest Contentful Paint", value: "under 1.2s" },
+      { label: "Homepage load", value: "Fast on mobile data" },
       { label: "Reading-focused layout width", value: "68ch" },
       { label: "Publish steps", value: "1" },
     ],
@@ -219,6 +222,7 @@ export const projects: Project[] = [
       { title: "Registration", note: "One form, no account required, to hold a child's slot." },
     ],
     real: true,
+    url: "https://youngtotsedventures.co.ke",
   },
   {
     slug: "kids-nook",
@@ -245,32 +249,58 @@ export const projects: Project[] = [
       { label: "Open days", value: "6 / week" },
     ],
     screens: [
-      { title: "Booking flow", note: "A five-section enrollment form wired to live availability." },
-      { title: "Loyalty & admin", note: "Automatic visit-count emails and a staff dashboard for day-to-day ops." },
+      {
+        title: "Salon & play",
+        note: "Hair styling sits next to gaming, a reading corner and outdoor play — one visit, five activities.",
+        image: "https://kidsnook.ke/assets/girl-glasses-6dgsnOPg.png",
+      },
+      {
+        title: "Birthday events",
+        note: "Party bookings are one of the site's most-used flows.",
+        image: "https://kidsnook.ke/assets/birthday-Db7K-Zld.png",
+      },
     ],
     real: true,
+    url: "https://kidsnook.ke",
+    image: "https://kidsnook.ke/assets/mother-child-OSVdrGxf.png",
   },
   {
     slug: "stanna-orchards",
     name: "Stanna Orchards",
     category: "Web",
     year: "2026",
-    blurb: "A farm and orchard business's first digital home — produce, visits and story, in one clean site.",
+    blurb:
+      "A B2B site for a Hass avocado farm in Nyandarua County — built to turn wholesalers and exporters into quote requests.",
     role: "Design, build",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
     problem:
-      "The business had no presence beyond word of mouth, so new customers had no way to find what was in season, how to visit, or how to get in touch.",
+      "A working farm supplying export-grade Hass avocados had no way for wholesalers, exporters and distributors to learn what it grows, how it's graded, or how to request a bulk quote — everything ran through word of mouth.",
     approach: [
-      "Structured the site around what a first-time visitor actually needs: what's grown, how to visit, how to reach the farm.",
-      "Kept the build lean and fast to launch, with room to add a shop or booking flow later without a rebuild.",
+      "Wrote the site for the actual buyer: wholesalers and exporters, not end consumers, so the language is grading, volume and supply — not recipes.",
+      "Laid out the farm-to-market journey (growing, flowering, harvesting, grading, delivery) so a buyer can see the process behind the product.",
+      "Put a quote-request form and WhatsApp contact one click from every section, since B2B leads convert on speed of response.",
     ],
-    outcome: "The farm now has a shareable, searchable front door that didn't exist before.",
+    outcome:
+      "The farm now has a credible front door for buyers to check quality claims and request a quote directly, instead of relying on referrals.",
     metrics: [
       { label: "Prior web presence", value: "None" },
-      { label: "Build window", value: "2 — 4 weeks" },
+      { label: "Lead paths", value: "Quote form + WhatsApp" },
     ],
-    screens: [{ title: "Home", note: "Produce, visiting info and contact, structured for a first-time visitor." }],
+    screens: [
+      {
+        title: "Orchard",
+        note: "Sunlit rows of mature Hass avocado trees — the farm itself, not stock photography.",
+        image: "https://stannaorchards.lovable.app/assets/about-tree-B9WoRhnX.jpg",
+      },
+      {
+        title: "Produce & grading",
+        note: "Export-grade fruit, hand graded and ready for bulk orders.",
+        image: "https://stannaorchards.lovable.app/assets/produce-avocados-Dlh-0cvQ.jpg",
+      },
+    ],
     real: true,
+    url: "https://stannaorchards.lovable.app",
+    image: "https://stannaorchards.lovable.app/assets/hero-orchard-C0-RhxQx.jpg",
   },
   {
     slug: "the-big-voice",
@@ -293,8 +323,21 @@ export const projects: Project[] = [
       { label: "Backend complexity", value: "Zero — static" },
       { label: "Enterprise clients shown", value: "LG, Cellulant, StarTimes +2" },
     ],
-    screens: [{ title: "Home", note: "Service pillars and client logos, structured around what the studio actually sells." }],
+    screens: [
+      {
+        title: "Event sound",
+        note: "Public address and full technical support for conferences, panels and activations.",
+        image: "https://thebigvoicelimited.co.ke/assets/event-Bc8gNSPx.jpg",
+      },
+      {
+        title: "Podcast production",
+        note: "Recording, editing, sound design and content structuring.",
+        image: "https://thebigvoicelimited.co.ke/assets/podcast-Swl75-fa.jpg",
+      },
+    ],
     real: true,
+    url: "https://thebigvoicelimited.co.ke",
+    image: "https://thebigvoicelimited.co.ke/assets/hero-c5spQ15H.jpg",
   },
 ];
 
