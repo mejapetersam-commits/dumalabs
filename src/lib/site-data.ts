@@ -1,3 +1,5 @@
+import kidsNookLogo from "@/assets/clients/kidsnook-logo.png";
+
 export const site = {
   name: "Duma Labs",
   tagline: "Building Digital Products That Move Africa Forward.",
@@ -132,37 +134,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: "morelifeos",
-    name: "MoreLifeOS",
-    category: "Product",
-    year: "2025",
-    blurb:
-      "A personal operating system for habits, focus and reflection — designed and built end to end.",
-    role: "Product strategy, design system, full-stack build",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
-    problem:
-      "Habit and productivity tools either track everything shallowly or demand so much setup that people abandon them in week two. The brief was a system that stays useful when motivation dips.",
-    approach: [
-      "Cut the first release to three loops: daily intent, tracked action, weekly reflection.",
-      "Designed a data model where every entry is cheap to write and easy to review later.",
-      "Built offline-tolerant writes so a lost connection never loses a day of input.",
-      "Shipped weekly to a small group of daily users and cut anything they stopped touching.",
-    ],
-    outcome:
-      "The product now runs as a daily-use tool with a retained core group, and the reflection loop — not the tracking — is what users cite as the reason they stay.",
-    metrics: [
-      { label: "Time to first usable build", value: "6 weeks" },
-      { label: "Core loops in v1", value: "3" },
-      { label: "Features cut before launch", value: "11" },
-    ],
-    screens: [
-      { title: "Daily intent", note: "One screen to set the day, built for a thumb on a phone." },
-      { title: "Streak + review", note: "Weekly reflection surfaces patterns instead of raw numbers." },
-    ],
-    real: true,
-    url: "https://morelifeos.vercel.app",
-  },
+
   {
     slug: "between-the-climbs",
     name: "Between the Climbs",
@@ -262,7 +234,7 @@ export const projects: Project[] = [
     ],
     real: true,
     url: "https://kidsnook.ke",
-    image: "https://kidsnook.ke/assets/mother-child-OSVdrGxf.png",
+    image: kidsNookLogo,
   },
   {
     slug: "stanna-orchards",
